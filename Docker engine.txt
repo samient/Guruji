@@ -1,0 +1,30 @@
+Docker Engine - Docker CLI, REST API, Docker Deamon
+https://docs.docker.com/storage/
+
+https://docs.docker.com/storage/storagedriver/
+
+https://docs.docker.com/storage/volumes/
+
+https://docs.docker.com/engine/
+
+https://docs.docker.com/engine/api/
+
+https://docs.docker.com/config/containers/runmetrics/#control-groups
+================================================
+1- Run a mysql container named mysql-db using the mysql image. Set database password to db_pass123 ?
+
+ANS- docker run -d --name mysql-db -e MYSQL_ROOT_PASSWORD=db_pass123 mysql
+
+2- $ sh get-data.sh
+
+3- Run a mysql container again, but this time map a volume to the container so that the data stored by the container is stored at /opt/data on the host.
+
+Use the same name : mysql-db and same password: db_pass123 as before. Mysql stores data at /var/lib/mysql inside the container.
+
+docker run -v /opt/data:/var/lib/mysql -d --name mysql-db -e MYSQL_ROOT_PASSWORD=db_pass123 mysql
+
+4- directory. Re-deploy a new mysql instance using the same options as before.
+
+Just run the same command as before. Here it is for your convenience: docker run -v /opt/data:/var/lib/mysql -d --name mysql-db -e MYSQL_ROOT_PASSWORD=db_pass123 mysql
+
+ANS - 

@@ -1,0 +1,86 @@
+creating own image
+instruction       Argument
+
+
+
+FROM ubuntu
+RUN apt-get update
+RUN apt-get install python
+RUN pip install flask
+RUN pip install flask-mysql
+COPY . /opt/source-code
+ENTRYPOINT FLASK_APP=/opt/source-code/app.py flask run
+
+
+=================================================
+creating own image
+
+$ sudo docker run -it ubuntu bash
+$ sudo apt-get install -y python
+$ sudo apt-get update
+$ python
+$ sudo pip install flask
+$ sudo apt-get install python-pip
+$ sudo pip install flask
+$ cat > /opt/app.py
+import os
+from flask import Flask
+app = Flask(__name__)
+
+@app.route("/")
+def main():
+    return "Welcome!"
+
+@app.route('/how are you')
+def hello():
+    return 'I am good, how about you?'
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=8080)
+$ vi /opt/app.py
+$ cd opt
+$ FLASK_APP=app.py flask run --host=0.0.0.0
+
+
+
+---------------------
+$ docker ps
+$ mkdir my-simple-webapp
+$ cd my-simple-webapp
+$ cat > dockerfile
+FROM ubuntu
+RUN apt-get update
+RUN apt-get install -y python python-pip
+RUN pip install flask
+
+copy app.py /opt/app.py
+
+ENTRYPOINT FLASK_APP=/opt/source-code/app.py flask run
+
+ctrl+c
+
+$  cat > /opt/app.py
+import os
+from flask import Flask
+app = Flask(__name__)
+
+@app.route("/")
+def main():
+    return "Welcome!"
+
+@app.route('/how are you')
+def hello():
+    return 'I am good, how about you?'
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=8080)
+
+$ docker build .
+$ docker build . -t my-simple-webapp
+
+Push app to docker hub
+$ docker push my-simple-webapp   
+
+
+
+

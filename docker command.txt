@@ -1,0 +1,88 @@
+# apt-get update
+# apt install docker.io -y
+# docker --version
+# docker images
+# docker ps
+# docker ps -a
+# docker pull ubuntu
+# docker run ubuntu
+# docker run -it ubuntu -d
+[-it intractive mode] [-d run in background]
+# docker stop (container id)
+# docker rm (container id)
+# docker start (container id)
+# docker rmi (image id)
+# docker kill (container id) {forced stop}
+GO INSIDE THE CONTAINER
+# docker exec -it (container id) bash
+COME OUT OF CONTAINER
+# exit
+# ls
+# ls -l -a
+# mkdir test
+# yum install https { install apache server on ubuntu}
+# service https status
+# yum install service
+# systemctl start httpd
+# apt update
+# apt install apache2
+# service apache2 status
+# docker commit container id my-webserver [apache2 to new image]
+
+#  yum install nfs utils
+# mkdir /filestore-data
+# mount -t nfs IP:/data /filestore-data (GCP Filestore IP)
+# touch file1 file2 ----- create file
+
+
+c5d5757d0cc1f4ce0cf2a663c35ca173d0cfe4ef0f38ac50b1be116787b03c87
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+==========================================
+SWARM COMMAND
+#  docker swarm init 
+
+#  docker node ls
+
+
+# swarm init
+# swarm join
+# service create
+# service inspect
+# service ls
+# service rm
+# service scale
+# service ps
+# service update
+
+Run # docker info to view the current state of the swarm
+
+Run the # docker node ls command to view information about nodes
+
+port required for SWARM 
+TCP port 2377 for cluster management communications
+TCP and UDP port 7946 for communication among nodes
+UDP port 4789 for overlay network traffic
+
+
+
+
+docker swarm join \
+  --token  SWMTKN-1-49nj1cmql0jkz5s954yi3oex3nedyz0fb0xx14ie39trti4wxv-8vxv8rssmk743ojnwacrr2e7c \
+  192.168.99.100:2377

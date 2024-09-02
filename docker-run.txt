@@ -1,0 +1,56 @@
+$ sudo docker inspect container id
+
+$ sudo docker logs container id
+
+$ sudo docker run ubuntu cat /etc/*release*
+
+$ sudo docker run ubuntu:17.10 cat /etc/*release*
+
+$ sudo docker run ubuntu sleep 15
+
+$ sudo docker run -d ubuntu sleep 15
+
+$ sudo docker run timer
+
+$ sudo docker run -d timer
+
+$ sudo dockrt attach container ID
+
+$ sudo docker run jenkings
+
+$ sudo docker pull jenkins:2.60.3-alpine
+
+$ sudo docker run jenkins:2.60.3-alpine
+
+ID - Admin
+Pasword - *************
+
+$ sudo docker ps
+
+$ sudo docker inspect [ID]
+
+in network you will get IP of jenkings by running above command
+
+------
+
+for port mapping docker container should be stop
+
+$ sudo docker run -p 8080:8080 jenkings:2.60.3-alpine
+
+$ mkdir my-jenkins-data
+
+$ sudo docker run -p 8080:8080 -v /root/my-jenkins-data:/var/jenkins_home -u root jenkings:2.60.3-alpine
+
+
+
+
+
+
+
+
+$ docker attach [container ID]
+
+
+
+
+https://cloud.google.com/migrate/compute-engine/docs/4.11/getting-started

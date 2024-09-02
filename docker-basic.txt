@@ -1,0 +1,51 @@
+
+To install Docker engin
+https://docs.docker.com/engine/install/ubuntu/sudo psudo
+
+# cat /etc/*release*
+
+uninstall old version
+
+$ sudo apt-get remove docker docker-engine docker.io containerd runc
+
+install Docker
+
+$ curl -fsSL https://get.docker.com -o get-docker.sh
+$ sudo sh get-docker.sh
+
+$ sudo docker version
+
+OR
+# apt-get update
+# apt install docker.io -y
+
+check bu running whalesy image
+
+$ sudo docker run docker/whalesay cowsay AMIT-Pandey
+
+BAsic Docker Command
+
+$ Sudo docker Run Nginx
+
+$ Docker run -d nginx --> run docker in background
+
+$ Docker PS --> provide basic information of container
+
+$ Docker PS -a --> show all running container
+
+$ Docker Stop
+
+$ Docker Images
+
+$Docker rmi nginx --> remove Docker image
+
+$ Docker Pull Nginx --> to pull image
+
+$ Docker exec
+
+$docker run ubuntu:18.4
+
+$ Docker attach {container ID}
+
+$ Docker detach 
+

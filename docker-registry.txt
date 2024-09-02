@@ -1,0 +1,21 @@
+Let practice deploying a registry server on our own.
+Run a registry server with name equals to my-registry using registry:2 image with host port set to 5000, and restart policy set to always.
+
+Note: Registry server is exposed on port 5000 in the image.
+
+$ docker run -d -p 5000:5000 --restart=always --name my-registry registry:2
+
+
+--------------------
+Now its time to push some images to our registry server. Let's push two images for now .i.e. nginx:latest and httpd:latest.
+
+
+
+Note: Don't forget to pull them first.
+
+To check the list of images pushed , use curl -X GET localhost:5000/v2/_catalog
+
+$ Run: docker pull nginx:latest then docker image tag nginx:latest localhost:5000/nginx:latest and finally push it using docker push localhost:5000/nginx:latest.
+We will use the same steps for the second image docker pull httpd:latest and then docker image tag httpd:latest localhost:5000/httpd:latest and finally push it using docker push localhost:5000/httpd:latest
+
+---------------------------------
